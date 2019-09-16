@@ -1,6 +1,6 @@
 {
-  "short_name": "Titanic chatbot",
-  "name": "DrAnt - chatbot explaining Machine Learning model for Titanic survival",
+  "short_name": "Dalogflow chatbot",
+  "name": "Roxy the Rockland Trust Bank Chatbot",
   "icons": [
     {
       "src": "assets/manifest_icons/res/mipmap-mdpi/ic_launcher.png",
