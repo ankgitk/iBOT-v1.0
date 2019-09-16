@@ -1,11 +1,9 @@
 <template>
     <main id="app">
 
-        <!-- TopHead is the header with the information about the app -->
         <TopHead v-if="app && messages.length > 0" :app="app"></TopHead>
         <section class="container chat-container">
 
-            <!-- Welcome component is for onboarding experience and language picker -->
             <Welcome v-if="app && messages.length == 0" :app="app"></Welcome>
 
             <!-- Messages Table -->
@@ -238,27 +236,9 @@ export default {
                 app.querySelector('#bottom').scrollIntoView({ 
                     behavior: 'smooth' 
                 })
-            }, 2) // <- wait for render (timeout) and then smoothly scroll #app down to #bottom selector, used as anchor
+            }, 2) // <- wait for render (timeout) 
         },
-        /* You don't need the function below. It's only for my cloud, to manage the SEO */
-        app(agent){
-            if(window.location.host.includes("cloud.ushakov.co")){
-                document.querySelector("title").innerText = agent.displayName
-                document.querySelector("meta[name=description]").content = agent.description
-                document.querySelector("link[rel=canonical]").href = location.href
-                document.querySelector("meta[name=application-name]").content = agent.displayName
-                document.querySelector("link[rel=icon]").href = agent.avatarUri
-                document.querySelector("link[rel=apple-touch-icon]").href = agent.avatarUri
-                document.querySelector("meta[name=msapplication-TileImage]").content = agent.avatarUri
-                document.querySelector("meta[name=apple-mobile-web-app-title]").content = agent.displayName
-                document.querySelector("meta[property=og\\:title]").content = agent.displayName
-                document.querySelector("meta[property=og\\:image]").content = agent.avatarUri
-                document.querySelector("meta[property=og\\:description]").content = agent.description
-                document.querySelector("meta[property=og\\:url]").content = location.href
-                document.querySelector("meta[name=twitter\\:title]").content = agent.displayName
-                document.querySelector("meta[name=twitter\\:image]").content = agent.avatarUri
-                document.querySelector("meta[name=twitter\\:description]").content = agent.description
-            }
+       
         }
     },
     methods: {
@@ -266,16 +246,16 @@ export default {
 
             this.loading = true
 
-            /* Make the request to gateway with formatting enabled */
+            /* Make the request to gateway with formatting enabled */ /* @@ Check API call */
             fetch(`https://api.dialogflow.com/v1/query?v=20150910&query=${q}&lang=en&sessionId=${this.session}`,
                 {method: 'GET', headers: {'content-type': 'application/json',
-                                        'Authorization': 'Bearer df9c131018dc46d7bd27841a914d5756'}})
+                                        'Authorization': 'Bearer 50a88d4259da4ec6adfdae14c4846d47'}})
             .then(response => {
                 return response.json()
             })
             .then(response => {
-                // console.log(response);
-                // console.log(JSON.stringify(response, null, 2));
+                console.log(response); /* Comment this */
+                console.log(JSON.stringify(response, null, 2)); /* @@ Comment this */
                 let messages = response.result.fulfillment.messages;
                 for (var i = 0; i < messages.length; i++) {
                     if (messages[i].type == 2) {
