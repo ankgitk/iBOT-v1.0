@@ -9,7 +9,6 @@ import worker from './registerServiceWorker' // <- register service worker, disa
 
 Vue.prototype.config = config // <- set config to global scope
 
-/* (global) This code is going to tell us, if history mode can be activated on the client, so the application can be consumed without localstorage */
 Vue.prototype.history = () => {
     try {
         localStorage.getItem('check')
@@ -21,7 +20,6 @@ Vue.prototype.history = () => {
     }
 }
 
-/* (global) Currently selected language or fallback language (en). Needs to be a function, since it's reactive. No need for vuex there */
 Vue.prototype.lang = () => {
     if(Vue.prototype.history()) return localStorage.getItem('lang') || config.app.fallback_lang
 
