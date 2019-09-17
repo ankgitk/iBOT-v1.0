@@ -238,8 +238,6 @@ export default {
                 })
             }, 2) // <- wait for render (timeout) 
         },
-       
-        }
     },
     methods: {
         send(q){
