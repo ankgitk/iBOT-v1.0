@@ -149,7 +149,8 @@ import Card from './../RichComponents/Card.vue'
 import List from './../RichComponents/List.vue'
 import Picture from './../RichComponents/Picture.vue'
 
-import * as uuidv1 from 'uuid/v1'
+//import * as uuidv1 from 'uuid/v1' 
+import {v1 as uuidv1} from 'uuid';
 
 export default {
     name: 'app',
