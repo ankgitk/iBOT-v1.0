@@ -196,7 +196,7 @@ export default {
 
         else {
             this.app = {
-                "displayName": "Titanic-explainer",
+                "displayName": "Rockland Trust Bank",
                 "defaultLanguageCode": "en",
                 "timeZone": "Europe/Kaliningrad",
                 "enableLogging": true,
