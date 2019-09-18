@@ -1,7 +1,7 @@
 <template>
     <header class="app-head">
         <img :alt="app.displayName" class="app-icon" :src="app.avatarUri" v-if="app.avatarUri" />
-        <img :alt="app.displayName" class="app-icon" src="https://www.rocklandtrust.com/assets/img/rockland-trust@2x.png" v-else />
+        <img :alt="app.displayName" class="app-icon" src="https://www.rocklandtrust.com/assets/img/rockland-trust.png" v-else />
         
         <div class="app-info">
             <div class="app-name">{{app.displayName}}</div>
