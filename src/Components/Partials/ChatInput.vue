@@ -34,7 +34,7 @@
     bottom: 0
     left: 0
     width: 100%
-    background-color: white
+    background-color: whitesmoke
 
 .flexible
     display: flex
@@ -54,7 +54,7 @@
     box-sizing: border-box
     border-radius: 40px
     flex: 1 0 0
-    background-color: #F1F3F4
+    background-color: white
 
 .input
     font-size: 16px
@@ -75,7 +75,7 @@
     margin-left: 6px
     border-radius: 50%
     cursor: pointer
-    background-color: #202124
+    background-color: white
     color: white
 
     &.mic_button
@@ -112,10 +112,8 @@ export default {
         }
     },
     watch: {
-        /* This function triggers when user clicks on the microphone button */
         micro(bool){
             if(bool){
-                /* When value is true, start voice recognition */
                 this.recognition.start()
                 this.recognition.onresult = (event) => {
                     for (let i = event.resultIndex; i < event.results.length; ++i){
@@ -131,7 +129,7 @@ export default {
             }
 
             else {
-                this.recognition.abort() // <- if user stops the recognition, abort it (in V1 this prevented users from starting a new recording)
+                this.recognition.abort()
             }
         }
     },
