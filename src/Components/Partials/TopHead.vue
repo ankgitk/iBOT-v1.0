@@ -19,7 +19,7 @@
     padding: 16px
     position: fixed
     width: 100%
-    background-color: white
+    background-color: #305376
 
     .app-icon
         border-radius: 50%
@@ -34,14 +34,14 @@
         .app-name
             font-size: 18px
             font-weight: 500
-            color: #202124
+            color: white
 
         .app-poweredby
             font-size: 14px
             opacity: .6
 
             a[href]
-                color: black
+                color: white
                 text-decoration: none
 </style>
 
