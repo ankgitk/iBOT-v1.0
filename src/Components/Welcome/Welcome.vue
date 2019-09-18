@@ -3,7 +3,7 @@
 
         <!-- Agent Icon -->
         <img :alt="app.displayName" class="app-icon" :src="app.avatarUri" v-if="app.avatarUri" />
-        <img :alt="app.displayName" class="app-icon" src="https://www.rocklandtrust.com/assets/img/rockland-trust@2x.png" v-else />
+        <img :alt="app.displayName" class="app-icon" src="https://www.rocklandtrust.com/assets/img/rockland-trust.png" v-else />
         
         <!-- Agent Title -->
         <h1 class="app-title">{{(config.i18n[sel_lang] && config.i18n[sel_lang].welcomeTitle) || config.i18n[config.app.fallback_lang].welcomeTitle}} {{app.displayName}}</h1>
