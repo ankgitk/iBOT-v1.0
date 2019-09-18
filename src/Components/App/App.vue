@@ -76,7 +76,7 @@ body
     padding: 0
     font-family: Roboto, sans-serif
     font-display: swap
-    background-color: white
+    background-color: whitesmoke
 
 .container
     max-width: 500px
@@ -283,22 +283,19 @@ export default {
                 this.messages.push(new_response)
                 this.handle(new_response) // <- trigger the handle function (explanation below)
                 this.loading = false
-                //console.log(JSON.stringify(new_response, null, 2)) // <- (optional) log responses
+                //console.log(JSON.stringify(new_response, null, 2)) // <- log responses
             })
         },
 
         handle(response){
-            /* This function is used for speech output */
             for (let component in response.queryResult.fulfillmentMessages){
                 let text // <- init a text variable
 
-                /* Set the text variable according to component name */
                 if(response.queryResult.fulfillmentMessages[component].type == 0) text = response.queryResult.fulfillmentMessages[component].speech
                 //console.log(text);
                 let speech = new SpeechSynthesisUtterance(text)
                 speech.voiceURI = 'native' // <- change this, to get a different voice
 
-                /* This "hack" is used to format our lang format, to some other lang format (example: en -> en_EN). Mainly for Safari, Firefox and Edge */
                 speech.lang = this.lang() + '-' + this.lang().toUpperCase()
 
                 if(!this.muted && text && text !== "") window.speechSynthesis.speak(speech) // <- if app is not muted, speak out the speech
