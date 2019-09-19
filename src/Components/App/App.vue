@@ -254,15 +254,18 @@ export default {
             })
             .then(response => {
                 console.log(response); /* Comment this */
-                console.log(JSON.stringify(response, null, 2)); /* @@ Comment this */
+                //console.log(JSON.stringify(response, null, 2)); /* @@ Comment this */
                 let messages = response.result.fulfillment.messages;
+                //console.log(response.result.metadata.intentName);
+                //console.log(messages[1].payload.innerText[0].type);
+                console.log(messages.length);
                 for (var i = 0; i < messages.length; i++) {
-                    if (messages[i].type == 2) {
+                    if (messages[i].payload.innerText[0].type == 2) { /* Button */
                         messages[i].name = "SUGGESTIONS";
                         delete messages[i].title;
-                        messages[i].content = messages[i].replies;
+                        messages[i].content = messages[i].payload.innerText[0].replies;
                     }
-                    else if (messages[i].type == 1){
+                    else if (messages[i].payload.innerText[0].type == 1){ /*CARD*/
                         messages[i].name = "CARD";
                         messages[i].content = {}
                         messages[i].content.title = messages[i].title
@@ -298,7 +301,7 @@ export default {
 
                 speech.lang = this.lang() + '-' + this.lang().toUpperCase()
 
-                if(!this.muted && text && text !== "") window.speechSynthesis.speak(speech) // <- if app is not muted, speak out the speech
+                if(!this.muted && text && text !== "") window.speechSynthesis.speak(speech) // 
             }
         }
     }
