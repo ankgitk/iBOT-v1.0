@@ -76,7 +76,7 @@
     border-radius: 50%
     cursor: pointer
     background-color: white
-    color: white
+    color: #202124
 
     &.mic_button
         background-color: #F1F3F4
