@@ -259,7 +259,7 @@ export default {
                 //console.log(response.result.metadata.intentName);
                 //console.log(messages[1].payload.innerText[0].type);
                 console.log(messages.length);
-                for (var i = 0; i < messages.length; i++) {
+                for (var i = 1; i < messages.length; i++) {
                     if (messages[i].payload.innerText[0].type == 2) { /* Button */
                         messages[i].name = "SUGGESTIONS";
                         delete messages[i].title;
