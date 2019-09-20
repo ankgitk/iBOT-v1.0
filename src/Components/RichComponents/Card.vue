@@ -79,6 +79,6 @@
 <script>
 export default {
     name: 'Card',
-    props: ['title', 'subtitle', 'text', 'image', 'button']
+    props: ['title', 'subtitle', 'text', 'image', 'buttons']
 }
 </script>
