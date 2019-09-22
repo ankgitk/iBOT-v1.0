@@ -254,18 +254,20 @@ export default {
             })
             .then(response => {
                 console.log(response); /* Comment this */
+                console.log(response.result.fulfillment.messages[1].payload.messages);
                 //console.log(JSON.stringify(response, null, 2)); /* @@ Comment this */
-                let messages = response.result.fulfillment.messages;
-                //console.log(response.result.metadata.intentName);
+                let messages = response.result.fulfillment.messages[1].payload.messages;
+                //console.log(response.result.metadata.intentName); 
                 //console.log(messages[1].payload.innerText[0].type);
                 console.log(messages.length);
-                for (var i = 1; i < messages.length; i++) {
-                    if (messages[i].payload.innerText[0].type == 2) { /* Button */
+                console.log(messages);
+                for (var i = 0; i < messages.length; i++) {
+                    if (messages[i].type === "2") { /* Button */
                         messages[i].name = "SUGGESTIONS";
                         delete messages[i].title;
-                        messages[i].content = messages[i].payload.innerText[0].replies;
+                        messages[i].content = messages[i].replies;
                     }
-                    else if (messages[i].payload.innerText[0].type == 1){ /*CARD*/
+                    else if (messages[i].type === "1"){ /*CARD*/
                         messages[i].name = "CARD";
                         messages[i].content = {}
                         messages[i].content.title = messages[i].title
@@ -294,7 +296,7 @@ export default {
             for (let component in response.queryResult.fulfillmentMessages){
                 let text // <- init a text variable
 
-                if(response.queryResult.fulfillmentMessages[component].type == 0) text = response.queryResult.fulfillmentMessages[component].speech
+                if(response.queryResult.fulfillmentMessages[component].type === "0") text = response.queryResult.fulfillmentMessages[component].speech
                 //console.log(text);
                 let speech = new SpeechSynthesisUtterance(text)
                 speech.voiceURI = 'native' // <- change this, to get a different voice
