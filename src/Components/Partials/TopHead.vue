@@ -5,7 +5,7 @@
         
         <div class="app-info">
             <div class="app-name">{{app.displayName}}</div>
-            <div class="app-poweredby"> <a href="https://www.rocklandtrust.com"> iBOT </a>
+            <div class="app-poweredby"> <a href="https://www.rocklandtrust.com"> Online </a>
 	</div>
 			
 
