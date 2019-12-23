@@ -3,7 +3,7 @@
 
         <!-- Agent Icon -->
         <img :alt="app.displayName" class="app-icon" :src="app.avatarUri" v-if="app.avatarUri" />
-        <img :alt="app.displayName" class="app-icon" src="https://www.rocklandtrust.com/assets/img/rockland-trust.png" v-else />
+        <img :alt="app.displayName" class="app-icon" src="https://cdn3.iconfinder.com/data/icons/chat-bot-glyph-silhouettes/300/21555133Untitled-3-512.png" v-else />
         
         <!-- Agent Title -->
         <h1 class="app-title">{{(config.i18n[sel_lang] && config.i18n[sel_lang].welcomeTitle) || config.i18n[config.app.fallback_lang].welcomeTitle}} {{app.displayName}}</h1>
