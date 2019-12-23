@@ -1,7 +1,7 @@
 <template>
     <header class="app-head">
         <img :alt="app.displayName" class="app-icon" :src="app.avatarUri" v-if="app.avatarUri" />
-        <img :alt="app.displayName" class="app-icon" src="https://cdn3.iconfinder.com/data/icons/chat-bot-glyph-silhouettes/300/21555133Untitled-3-512.png" v-else />
+        <img :alt="app.displayName" class="app-icon" src="https://www.rocklandtrust.com/assets/img/rockland-trust.png" v-else />
         
         <div class="app-info">
             <div class="app-name">{{app.displayName}}</div>
