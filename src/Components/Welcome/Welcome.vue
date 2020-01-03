@@ -12,7 +12,6 @@
         <p class="app-description">{{app.description}} </p>
 		<p> Hello there! </p>
 		<p> I'm iBOT, your virtual personal assistant.</p>
-		<p> I can help you learn about the products offered, find the perfect product for you and open an account.So, what can I help with you today? </p>
 		
         <!-- Language picker, when your Agent supports more than one Language -->
         <div v-if="app.supportedLanguageCodes && app.supportedLanguageCodes.length > 0">
