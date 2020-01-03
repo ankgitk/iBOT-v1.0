@@ -4,7 +4,7 @@
         <img :alt="app.displayName" class="app-icon" src="https://www.rocklandtrust.com/assets/img/rockland-trust.png" v-else />
         
         <div class="app-info">
-            <div class="app-name">{{app.displayName}}</div>
+            <div class="app-name">Test Screen</div>
             <div class="app-poweredby"> <a href="https://www.rocklandtrust.com"> Online </a>
 	</div>
 			
